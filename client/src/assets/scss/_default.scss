@@ -1,0 +1,32 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+}
+
+html, body { height: 100%; line-height: $line-height; font-size: $font-size; }
+html, body, input, button, textarea { font-family: $font-family; color: $text-primary; }
+
+button:not(:disabled):not(.disabled) { cursor: pointer; }
+a { text-decoration: none; }
+ul li { list-style: none; }
+
+#root {
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: $background-color;
+}
+
+.container {
+  max-width: $container-width + px;
+  margin: 0 auto;
+  padding: $container-padding;
+}
+
+@media screen and (max-device-width: 1024px) {
+  *, *::before, *::after {
+    cursor: default !important;
+  }
+}

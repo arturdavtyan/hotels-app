@@ -1,0 +1,75 @@
+// Text
+.short-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Text align
+.text-right {
+  text-align: right;
+}
+
+// Text no wrap
+.text-no-wrap { white-space: nowrap; }
+
+// Width
+.w-full { width: 100%; }
+
+// Cursor
+.cursor-default { cursor: default; }
+.cursor-pointer { cursor: pointer; }
+.cursor-wait { cursor: wait; }
+.cursor-text { cursor: text; }
+.cursor-move { cursor: move; }
+
+// Margin
+@for $i from 0 to 17 {
+  .m-#{$i} { margin: #{$i * 3}px; }
+  .mt-#{$i} { margin-top: #{$i * 3}px; }
+  .mb-#{$i} { margin-bottom: #{$i * 3}px; }
+  .ml-#{$i} { margin-left: #{$i * 3}px; }
+  .mr-#{$i} { margin-right: #{$i * 3}px; }
+}
+
+// Flex
+.flex { display: flex; }
+.items-start { align-items: flex-start; }
+.items-end { align-items: flex-end; }
+.items-center { align-items: center; }
+.items-baseline { align-items: baseline; }
+.items-stretch { align-items: stretch; }
+
+// Flex justify content
+.justify-start { justify-content: flex-start; }
+.justify-end { justify-content: flex-end; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-around { justify-content: space-around; }
+.justify-evenly { justify-content: space-evenly; }
+
+.scrollable {
+
+  &--hover {
+    
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    &:hover::-webkit-scrollbar {
+      display: block;
+    }
+    @media screen and (max-device-width: 1024px) {
+      &::-webkit-scrollbar {
+        display: none !important;
+      }
+    }
+  }
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $text-secondary;
+    border-radius: 8px;
+  }
+}

@@ -1,0 +1,17 @@
+@import '../../assets/scss/variables';
+
+.primary-button {
+  display: inline-block;
+  height: 38px;
+  padding: 0 26px;
+  border-radius: 8px;
+  font-size: 18px;
+  background-color: $primary;
+  color: white;
+  white-space: nowrap;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background-color: darken($primary, 10);
+  }
+}
