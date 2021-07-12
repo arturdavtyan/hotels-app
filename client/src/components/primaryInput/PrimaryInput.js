@@ -1,4 +1,4 @@
-import './style.scss'
+import './PrimaryInput.scss'
 
 const PrimaryInput = ({ onChange, label, className, width, type = 'text' }) => {
   return (

@@ -1,4 +1,4 @@
-import './style.scss'
+import './PageText.scss'
 
 const PageText = ({ text, className }) => {
   return (

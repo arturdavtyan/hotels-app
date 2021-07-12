@@ -36,10 +36,12 @@ module.exports.createFeedback = async (req, res) => {
     const queryFields = fields.filter(field => field.required)
 
     const { rows } = await db.query(
-      `INSERT INTO feedback (${queryFields.map(field => field.field).join(',')}) VALUES(${queryFields.map((f,i) => `$${i+1}`).join(',')}) RETURNING feedback_id`,
+      `INSERT INTO feedback
+        (${queryFields.map(field => field.field).join(',')})
+        VALUES(${queryFields.map((f,i) => `$${i+1}`).join(',')}) RETURNING feedback_id, created_at`,
       queryFields.map(field => field.value)
     )
-    res.status(201).json({ feedback_id: rows[0].feedback_id })
+    res.status(201).json({ feedback_id: rows[0].feedback_id, created_at: rows[0].created_at })
   } catch (error) {
     res.status(500).json({ message: error.message })
   }

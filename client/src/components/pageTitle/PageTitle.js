@@ -1,4 +1,4 @@
-import './style.scss'
+import './PageTitle.scss'
 
 const PageTitle = ({ title, className }) => {
   return (

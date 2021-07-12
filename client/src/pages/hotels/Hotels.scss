@@ -1,0 +1,10 @@
+.row {
+  gap: 24px;
+}
+.col {
+  flex-grow: 1;
+  flex-shrink: 1;
+
+  &-left { flex-basis: 35%; min-width: 280px; }
+  &-right { flex-basis: calc(65% - 24px); }
+}

@@ -32,7 +32,14 @@ module.exports.getById = async (req, res) => {
       `SELECT
         hotels.*,
         AVG(feedback.rate)::numeric(5,2)::float4 AS rate,
-        ARRAY_REMOVE(ARRAY_AGG(feedback.comment), NULL) AS comments
+        COALESCE(json_agg(
+          json_build_object(
+            'feedback_id', feedback.feedback_id,
+            'message', feedback.comment,
+            'rate', feedback.rate,
+            'created_at', feedback.created_at
+          )
+        ) FILTER (WHERE feedback.created_at IS NOT NULL), '[]') AS comments
       FROM hotels
       LEFT JOIN feedback ON hotels.hotel_id = feedback.hotel_id
       GROUP BY hotels.hotel_id

@@ -1,8 +1,8 @@
-import './style.scss'
+import './PrimaryButton.scss'
 
-const PrimaryButton = ({ onClick, children }) => {
+const PrimaryButton = ({ onClick, children, className }) => {
   return (
-    <button className="primary-button" onClick={onClick}>
+    <button className={`primary-button ${className || ''}`.trim()} onClick={onClick}>
       { children }
     </button>
   )

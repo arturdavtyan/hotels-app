@@ -1,13 +1,16 @@
 import { useState  } from "react"
 import { useHistory } from "react-router-dom"
 
-import Section from "../components/section/Section"
-import PageTitle from "../components/pageTitle/PageTitle"
+import Section from "../../components/section/Section"
+import PageTitle from "../../components/pageTitle/PageTitle"
 import PrimaryInput from "../../components/primaryInput/PrimaryInput"
 import PrimaryTextarea from "../../components/primaryTextarea/PrimaryTextarea"
 import PrimaryButton from "../../components/primaryButton/PrimaryButton"
+import SecondaryButton from "../../components/secondaryButton/SecondaryButton"
 
-import { createHotel } from '../../api/hotels'
+import { createHotel } from '../../services/api/hotels'
+
+import LeftArrowIcon from '../../assets/svgs/arrow-left-solid.svg'
 
 const CreateHotel = () => {
   const history = useHistory()
@@ -23,8 +26,8 @@ const CreateHotel = () => {
   }
   const createHotelFnc = async () => {
     try {
-      await createHotel(newHotel)
-      history.push('/')
+      const { hotel_id } = await createHotel(newHotel)
+      history.push(`/hotels/${hotel_id}`)
     } catch (error) {
       console.log(error)
     }
@@ -32,8 +35,11 @@ const CreateHotel = () => {
 
   return (
     <Section>
+      <SecondaryButton onClick={() => history.push('/')}>
+      <img style={{ width: '22px', height: '22px' }} src={LeftArrowIcon} alt="Button" />
+      </SecondaryButton>
       <PageTitle
-        className="mb-16"
+        className="mt-6 mb-12"
         title="Create hotel" />
       <PrimaryInput
         className="mb-10"

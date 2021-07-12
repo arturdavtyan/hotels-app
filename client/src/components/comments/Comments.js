@@ -1,14 +1,14 @@
-import './style.scss'
+import Card from '../card/Card'
+import Comment from './Comment'
 
 const Comments = ({ comments = [] }) => {
   return (
-    <div className="comments">
-      { comments.map(comment => {
-        return (
-          <div className="comments__item">{ comment }</div>
-        )
-      }) }
-    </div>
+    <>
+      { comments.length > 0 &&
+        <Card>
+          { comments.map(comment => <Comment key={comment.feedback_id} comment={comment} />) }
+        </Card> }
+    </>
   )
 }
 

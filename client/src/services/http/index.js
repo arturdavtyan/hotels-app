@@ -1,6 +1,6 @@
 const BASE_URL = 'http://localhost:5000/api/v1/'
 
-export default async function (url, settings) {
+export default async function http (url, settings) {
   const response = await fetch(`${BASE_URL}${url}`, {
     headers: {
       'Accept': 'application/json, text/plain, */*',

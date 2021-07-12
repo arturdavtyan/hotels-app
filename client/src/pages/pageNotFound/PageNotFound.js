@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
 
-import Section from "../components/section/Section"
-import PageTitle from "../components/pageTitle/PageTitle"
+import Section from "../../components/section/Section"
+import PageTitle from "../../components/pageTitle/PageTitle"
 
-import './style.scss'
+import './PageNotFound.scss'
 
 const CreateHotel = () => {
   return (

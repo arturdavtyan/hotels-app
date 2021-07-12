@@ -1,4 +1,4 @@
-import './style.scss'
+import './Section.scss'
 
 const Section = ({ children }) => {
   return (

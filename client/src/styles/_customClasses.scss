@@ -32,6 +32,15 @@
   .mr-#{$i} { margin-right: #{$i * 3}px; }
 }
 
+// Padding
+@for $i from 0 to 17 {
+  .p-#{$i} { padding: #{$i * 3}px; }
+  .pt-#{$i} { padding-top: #{$i * 3}px; }
+  .pb-#{$i} { padding-bottom: #{$i * 3}px; }
+  .pl-#{$i} { padding-left: #{$i * 3}px; }
+  .pr-#{$i} { padding-right: #{$i * 3}px; }
+}
+
 // Flex
 .flex { display: flex; }
 .items-start { align-items: flex-start; }
@@ -39,6 +48,10 @@
 .items-center { align-items: center; }
 .items-baseline { align-items: baseline; }
 .items-stretch { align-items: stretch; }
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
 
 // Flex justify content
 .justify-start { justify-content: flex-start; }
