@@ -1,0 +1,34 @@
+@import '../../styles/variables';
+
+.primary-textarea {
+
+  &__title {
+    margin-bottom: 6px;
+    padding-left: 8px;
+  }
+  &__text {
+    font-size: 14px;
+    color: $primary
+  }
+  &__textarea-box {}
+  &__textarea {
+    display: block;
+    width: 100%;
+    min-height: 90px;
+    padding: 10px 12px;
+    border: 1px solid $primary;
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 1.46;
+    background-color: transparent;
+    resize: vertical;
+    
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 8px;
+      background-color: $primary;
+    }
+  }
+}

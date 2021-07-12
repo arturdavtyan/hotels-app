@@ -1,0 +1,9 @@
+@import '../../styles/variables';
+
+.hotel {
+
+  &__link {
+    font-size: 22px;
+    color: $text-primary;
+  }
+}
